@@ -28,6 +28,7 @@ public class Lexer {
             fileContent.add(line);
         }
         file.close();
+        //The lexar method needs to be able to return a lexical breakdown of the given file. Refer to the parser report document for the format
         String[] returnArray = fileContent.toArray(new String[0]);
         return returnArray;
 
@@ -35,7 +36,7 @@ public class Lexer {
     catch (FileNotFoundException e)
     {
         System.out.println("Please input a valid filepath");
-        String[] returnArray = {"foo"};
+        String[] returnArray = {"foo"}; // This is really only needed for the writeToFile method in Parser.java
         //e.printStackTrace();
         return returnArray;
     }
@@ -114,6 +115,7 @@ public class Lexer {
     }
 
     public String errorMessage() {
+        // Error message needs to be able to print the line the error occured on and explain it
         return errorMessage;
     }
 
