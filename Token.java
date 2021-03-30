@@ -1,5 +1,6 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+//import javafx.application.Application;
 
 public enum Token {
 
@@ -34,7 +35,7 @@ public enum Token {
     STRING ("\"[^\"]+\""),
     INTEGER ("\\d+"), 
     IDENTIFIER ("\\w+");
-    REAL ("(\\d+)\\.\\d+");
+    //REAL ("(\\d+)\\.\\d+");
 
     private final Pattern pattern;
 

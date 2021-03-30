@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class Lexer {
     private StringBuilder input = new StringBuilder();
-    private Parser token;
+    private Token token;
     private String lexema;
     private boolean exausthed = false;
     private String errorMessage = "";
