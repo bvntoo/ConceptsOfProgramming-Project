@@ -35,7 +35,19 @@ public static void main(String[] args)
     }
     
     // Use method to use lexical analyzer on fileContents before printing to output file
-    
+    Lexer lexer= new Lexer(fileContent);
+
+    while (!lexer.isExausthed()) {
+        System.out.printf("%-18s :  %s \n",lexer.currentLexema() , lexer.currentToken());
+        lexer.moveAhead();
+    }
+
+    if (lexer.isSuccessful()) {
+        System.out.println("Success");
+    } else {
+        System.out.println(lexer.errorMessage());
+    }
+
     writeToFile(fileContents);
 }
 
