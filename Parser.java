@@ -35,7 +35,7 @@ public static void main(String[] args)
     }   
     
     // Use method to use lexical analyzer on fileContents before printing to output file
-    Lexer lexer= new Lexer(fileContents);
+    Lexer lexer= new Lexer(fileContents); // fileContents is a string array, Lexer.java needs to be modified to work with a string arrray instead of a string
 
     while (!lexer.isExausthed()) {
         System.out.printf("%-18s :  %s \n",lexer.currentLexema() , lexer.currentToken());
