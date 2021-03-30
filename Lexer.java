@@ -4,6 +4,8 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
+import java.util.Scanner;
+import java.util.File;
 
 public class Lexer {
     private StringBuilder input = new StringBuilder();
@@ -13,22 +15,38 @@ public class Lexer {
     private String errorMessage = "";
     private Set<Character> blankChars = new HashSet<Character>();
 
-    public Lexer(String filePath) {
-        try (Stream<String> st = Files.lines(Paths.get(filePath))) {
-            st.forEach(input::append);
-        } catch (IOException ex) {
-            exausthed = true;
-            errorMessage = "Could not read file: " + filePath;
-            return;
-        }
+    public Lexer(String[] filePath) {
+        try
+    {
+        Scanner file = new Scanner(new File(filePath));
+        List<String> fileContent = new ArrayList<String>();
+        String line = "";
 
-        blankChars.add('\r');
-        blankChars.add('\n');
-        blankChars.add((char) 8);
-        blankChars.add((char) 9);
-        blankChars.add((char) 11);
-        blankChars.add((char) 12);
-        blankChars.add((char) 32);
+        while(file.hasNextLine()!=false)
+        {
+            line = file.nextLine();
+            fileContent.add(line);
+        }
+        file.close();
+        String[] returnArray = fileContent.toArray(new String[0]);
+        return returnArray;
+
+    }
+    catch (FileNotFoundException e)
+    {
+        System.out.println("Please input a valid filepath");
+        String[] returnArray = {"foo"};
+        //e.printStackTrace();
+        return returnArray;
+    }
+
+        fileContent.add('\r');
+        fileContent.add('\n');
+        fileContent.add((char) 8);
+        fileContent.add((char) 9);
+        fileContent.add((char) 11);
+        fileContent.add((char) 12);
+        fileContent.add((char) 32);
 
         moveAhead();
     }

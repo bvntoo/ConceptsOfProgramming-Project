@@ -32,10 +32,10 @@ public static void main(String[] args)
     for (String s : fileContents)
     {
         System.out.println(s);
-    }
+    }   
     
     // Use method to use lexical analyzer on fileContents before printing to output file
-    Lexer lexer= new Lexer(fileContent);
+    Lexer lexer= new Lexer(fileContents);
 
     while (!lexer.isExausthed()) {
         System.out.printf("%-18s :  %s \n",lexer.currentLexema() , lexer.currentToken());
