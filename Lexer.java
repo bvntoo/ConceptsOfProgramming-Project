@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 import java.util.Scanner;
-import java.util.File;
+//import java.util.File;
 
 public class Lexer {
     private StringBuilder input = new StringBuilder();
@@ -32,13 +32,25 @@ public class Lexer {
         String[] returnArray = fileContent.toArray(new String[0]);
         return returnArray;
 
+        /**String line = null;
+		try {
+			FileReader fileReader = new FileReader(file);
+			BufferedReader br = new BufferedReader(fileReader);
+			int lineNumber  = 1;
+			while((line = br.readLine()) != null) {
+				automaton.identifyCharacter(line, lineNumber);
+				lineNumber++;
+			 }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+        */
+
     }
     catch (FileNotFoundException e)
     {
-        System.out.println("Please input a valid filepath");
-        String[] returnArray = {"foo"}; // This is really only needed for the writeToFile method in Parser.java
-        //e.printStackTrace();
-        return returnArray;
+       
     }
 
         fileContent.add('\r');
