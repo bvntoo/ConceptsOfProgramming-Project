@@ -1,3 +1,6 @@
+package lexical_analyzer;
+
+
 // Update 1: Fixed issues with assignment. Now assignment operations are formatted as "7 = int x" instead of "int x = 7" for example.
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.Reader;
+
 //import java.nio.file.Path;
 //import java.nio.file.Paths;
 
@@ -37,16 +42,6 @@ public static void main(String[] args)
     // Use method to use lexical analyzer on fileContents before printing to output file
     Lexer lexer= new Lexer(fileContents); // fileContents is a string array, Lexer.java needs to be modified to work with a string arrray instead of a string
 
-    while (!lexer.isExausthed()) {
-        System.out.printf("%-18s :  %s \n",lexer.currentLexema() , lexer.currentToken());
-        lexer.moveAhead();
-    }
-
-    if (lexer.isSuccessful()) {
-        System.out.println("Success");
-    } else {
-        System.out.println(lexer.errorMessage());
-    }
 
     writeToFile(fileContents);
 }

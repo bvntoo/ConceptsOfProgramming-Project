@@ -1,3 +1,5 @@
+package lexical_analyzer;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 //import javafx.application.Application;
