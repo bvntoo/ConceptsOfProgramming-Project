@@ -43,7 +43,8 @@ public static void main(String[] args)
     Lexer lexer= new Lexer(fileContents); // fileContents is a string array, Lexer.java needs to be modified to work with a string arrray instead of a string
 
 
-    writeToFile(fileContents);
+    //writeToFile(fileContents);
+
 }
 
 public static String[] readFile(String input) {

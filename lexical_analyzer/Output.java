@@ -1,6 +1,7 @@
 package lexical_analyzer;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Output {
 
@@ -63,5 +64,28 @@ public class Output {
 	
 	public static LinkedHashMap<Integer, String> getOutput(){
 		return output;
+	}
+	public static void print()
+	{
+
+		Integer [] key=  new Integer[output.size()];
+		String [] value= new String[output.size()];
+		
+		int i=0;
+		for(Map.Entry<Integer, String> entry: output.entrySet())
+		{
+			key[i]=entry.getKey();
+			value[i++]=entry.getValue();
+
+		}
+
+		for(i=0;i<output.size();i++)
+		{
+			System.out.println( key[i] + "->" + value[i]);	
+		}
+
+
+
+
 	}
 }

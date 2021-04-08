@@ -1,0 +1,8 @@
+1 Print: "Random Thing goes here"= int intVar% 
+2 Input: "Secondary Random thing"= String stringVar$ 
+3 Print: 104 - 94 = 10
+4 Print: 23 + 6 = 17
+5 Print: 19 * 9 = 171
+6 Print: 14 / 4 = 3
+7 Print: "19 - 2"
+8 

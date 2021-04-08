@@ -3,7 +3,8 @@ package lexical_analyzer;
 
 public class Automation 
 {
-    public void identifyCharacter(String line, int lineNumber){
+
+	public void identifyCharacter(String line, int lineNumber){
 		if(!line.equals("")){
 			if(isNumber(line.charAt(0))){
 				numberIdentifier(line, lineNumber);
@@ -21,9 +22,18 @@ public class Automation
 					case 'r': realIdentifier(line, lineNumber); break;
 					default: Error.addError(lineNumber);
 				}
+
+
+				
+
+				System.out.println();
+
+				Output.print();
+
 			}
 		}else{
 			Error.addError(lineNumber);
+			Error.print();
 		}
 	}
 	
@@ -284,7 +294,7 @@ public class Automation
 	
 	private boolean isNumber(char c){
 		return Character.isDigit(c);
-	}
+	} 
 
     
 }

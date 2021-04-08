@@ -13,4 +13,14 @@ public class Error {
 	public static ArrayList<Integer> getErros(){
 		return errors;
 	}
+
+	public static void print()
+	{
+
+			for(int i=0; i<errors.size();i++)
+			{
+				System.out.println(errors.get(i));
+			}
+		
+	}
 }
